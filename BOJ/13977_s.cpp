@@ -1,0 +1,2 @@
+#include<iostream>
+using ll=int64_t;ll i=1,t,c,n,r,f[4000001]={1},M=1000000007;ll p(ll a,ll b){if(b==1)return a%M;c=p(a,b/2);return b%2?c*c%M*a%M:c*c%M;}int main(){for(;i<4000001;i++)f[i]=f[i-1]*i%M;scanf("%d",&t);while(t--)scanf("%d%d",&n,&r),printf("%lld\n",f[n]*p(f[n-r]*f[r]%M,M-2)%M);}
